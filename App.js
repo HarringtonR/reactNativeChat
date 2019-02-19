@@ -1,11 +1,11 @@
 import {
-  createMaterialTopTabNavigator,
+  createStackNavigator,
   createAppContainer
 } from 'react-navigation';
 import Main from './components/Main.js';
 import Chat from './components/Chat.js';
 
-const RootStack = createMaterialTopTabNavigator({
+const RootStack = createStackNavigator({
   Main: Main,
   Chat: Chat
 }, {
@@ -22,5 +22,5 @@ const RootStack = createMaterialTopTabNavigator({
   },
 });
 
-const App = createAppContainer(RootStack);
-export default App;
+const navigator = createAppContainer(RootStack);
+export default navigator;

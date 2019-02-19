@@ -42,13 +42,8 @@ class Fire {
 
   parse = snapshot => {
     const {
-      timestamp: numberStamp,
-      text,
-      user
-    } = snapshot.val();
-    const {
-      key: _id
-    } = snapshot;
+      timestamp: numberStamp, text, user } = snapshot.val();
+    const { key: _id } = snapshot;
     const timestamp = new Date(numberStamp);
     const message = {
       _id,
@@ -70,14 +65,8 @@ class Fire {
   // send the message to the Backend
   send = messages => {
     for (let i = 0; i < messages.length; i++) {
-      const {
-        text,
-        user
-      } = messages[i];
-      const message = {
-        text,
-        user,
-        timestamp: this.timestamp,
+      const { text, user } = messages[i];
+      const message = { text, user, timestamp: this.timestamp,
       };
       this.append(message);
     }
